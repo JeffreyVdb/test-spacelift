@@ -1,5 +1,4 @@
 module "sg_wowza" {
-  count   = 0
   source  = "cloudposse/security-group/aws"
   version = "2.0.1"
 
