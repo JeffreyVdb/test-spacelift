@@ -1,5 +1,4 @@
 module "sg_wowza" {
-  count   = 0
   source  = "cloudposse/security-group/aws"
   version = "2.0.1"
 
@@ -19,6 +18,14 @@ module "sg_wowza" {
           to_port     = 443
           protocol    = "tcp"
           description = "HTTPS access for all"
+        },
+        {
+          key         = "ssh"
+          type        = "ingress"
+          from_port   = 22
+          to_port     = 22
+          protocol    = "tcp"
+          description = "SSH access for all"
         },
       ]
     }
